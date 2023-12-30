@@ -1,0 +1,38 @@
+@import "./mixing.scss";
+@import "./varible.scss";
+
+body {
+    background-color: $body-bg;
+
+    .container {
+        height: 100vh;
+
+        #Speech-form {
+            width: fit-content;
+            border-radius: 6px;
+            margin: auto;
+            background-color: $bachground;
+
+            .separator {
+                display: block;
+                height: 0;
+                border-bottom: 1px solid var(--bs-border-color);
+            }
+
+            .shadow-defult {
+                box-shadow: $shadow;
+            }
+
+            .output-text {
+                width: 100%;
+                min-width: 200px;
+                height: 100px;
+            }
+
+            button {
+                width: 100%;
+                @include display-f()
+            }
+        }
+    }
+}

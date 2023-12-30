@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text App</title>
+    <!-- material icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+    <div class="container d-flex align-items-center">
+        <div id="Speech-form" class="border p-4 ">
+            <div class="header">
+                <h1 class="text-3xl font-bold underline fs-2">Speech Recognition App</h1>
+                <div id="language">
+                    <label for="language-user" class="form-label">language</label>
+                    <select name="language-user" id="language-user" class="form-control shadow-defult"
+                        aria-label="Large select example">
+                        <option value="">English</option>
+                    </select>
+                </div>
+            </div>
+            <!-- seprator strat -->
+            <div class="separator  my-4"></div>
+            <!-- seprator end -->
+            <div class="main">
+                <div id="recording">
+                    <button class="btn btn-primary mb-1">
+                        <div class="icon">
+                            <span class="material-symbols-outlined fs-4">
+                                mic
+                            </span>
+                        </div>
+                        <span>Start Listening</span>
+                    </button>
+                </div>
+                <div id="result">
+                    <h4>Result :</h4>
+                    <div class="output-text p-2 border fs-6 fw-medium shadow-defult"></div>
+                </div>
+                <div class="user-action d-flex justify-content-center align-items-center mt-2 gap-2">
+                    <button class="btn btn-primary">
+                        <span class="material-symbols-outlined fs-5">
+                            delete
+                        </span>
+                        <span>Clear</span>
+                    </button>
+                    <button class="btn btn-primary" disabled>
+                        <span class="material-symbols-outlined fs-5">
+                            cloud_download
+                        </span>
+                        <span>Download</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- bootstrap -->
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
