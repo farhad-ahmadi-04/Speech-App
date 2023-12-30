@@ -1,0 +1,35 @@
+{
+    "languages": [{
+            "name": "English",
+            "native": "English",
+            "code": "en"
+        },
+        {
+            "name": "Chinese",
+            "native": "Zhōngguó 中国",
+            "code": "zh"
+        },
+        {
+            "name": "French",
+            "native": "France",
+            "code": "fr"
+        },
+        {
+            "name": "German",
+            "native": "Deutschland",
+            "code": "de"
+        },
+        {
+            "name": "Italian",
+            "native": "Italia",
+            "code": "it"
+        },
+        {
+            "name": "Persian (Farsi)",
+            "native": "Īrān ایران",
+            "code": "fa"
+        }
+
+    ]
+
+}
