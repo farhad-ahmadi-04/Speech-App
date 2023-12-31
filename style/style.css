@@ -5,7 +5,7 @@ body .container {
   height: 100vh;
 }
 body .container #Speech-form {
-  width: fit-content;
+  width: 350px;
   border-radius: 6px;
   margin: auto;
   background-color: #fffdfd;
@@ -20,8 +20,9 @@ body .container #Speech-form .shadow-defult {
 }
 body .container #Speech-form .output-text {
   width: 100%;
-  min-width: 200px;
   height: 100px;
+  line-break: auto;
+  overflow-y: auto;
 }
 body .container #Speech-form button {
   width: 100%;
@@ -29,6 +30,10 @@ body .container #Speech-form button {
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+body .container #Speech-form .intrim {
+  display: inline;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

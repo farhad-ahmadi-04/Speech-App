@@ -1,18 +1,19 @@
 import {
     languagesTemplate,
-    readData
+    readData,
+    resultRecord
 }
 from "./unit.js";
 // varibles...
 const language = document.querySelector("#language-user"),
-    recording = document.querySelector("#recording>button"),
+    record = document.querySelector("#recording>button"),
     result = document.querySelector(".output-text"),
     clear = document.querySelector(".clear"),
     download = document.querySelector(".download")
 // events...
 
 document.addEventListener("DOMContentLoaded", options)
-// recording.addEventListener("click", record)
+record.addEventListener("click", recordSpeech)
 // clear.addEventListener("click", clearText)
 // download.addEventListener("click", downloadText)
 
@@ -37,4 +38,76 @@ function searchInData(data) {
     data.forEach(item => {
         languagesTemplate(item.code, item.name, language)
     });
+}
+
+// ---Prefixed properties---
+// Browsers currently support speech recognition with prefixed properties. Therefore at the start of our code we include these lines to allow for both prefixed properties and unprefixed versions that may be supported in future:
+let speechRecognition = window.speechRecognition || window.webkitSpeechRecognition,
+    recognition,
+    recording = false;
+
+/**
+ * first of all: handel error. 
+ * second: call speechRecognition class and get targhet language.
+ *  third set interimResults: true{The **interimResults** property of the SpeechRecognition interface controls whether interim results should be returned ( true ) or not ( false .) Interim results are results that are not yet final (e.g. the SpeechRecognitionResult. isFinal property is false .) The default value for interimResults is false}.
+ *  4td: start of recoring.
+ * 5td: get result of speech with (onresult event) {The onresult property of the SpeechRecognition interface represents an event handler that will run when the speech recognition service returns a result}.
+ * 6th: set activity for finish the speech with (onspeechend event) {The onspeechend property of the SpeechRecognition interface represents an event handler that will run when speech recognised by the speech recognition service has stopped being detected}.
+ * 7th: set activity for error the speech with (onerror event) {The onerror property of the SpeechRecognition interface represents an event handler that will run when a speech recognition error occurs}.
+ */
+function speechToText() {
+    try {
+        recognition = new speechRecognition();
+        recognition.lang = language.value;
+        // The **interimResults** property of the SpeechRecognition interface controls whether interim results should be returned ( true ) or not ( false .) Interim results are results that are not yet final (e.g. the SpeechRecognitionResult. isFinal property is false .) The default value for interimResults is false
+        recognition.interimResults = true;
+        document.querySelector("#recording>button>span").innerHTML = "Listning...";
+        // start of recoring
+        recognition.start()
+        /**
+         * The onresult property of the SpeechRecognition interface represents an event handler that will run when the speech recognition service returns a result
+         * @param {object} event - using object for search in respons of web speech API 
+         */
+        recognition.onresult = (event) => {
+            resultRecord(event, result, download)
+        };
+
+        // The onspeechend property of the SpeechRecognition interface represents an event handler that will run when speech recognised by the speech recognition service has stopped being detected
+        recognition.onspeechend = () => {
+            // on speech end again call the function to continously listen
+            speechToText()
+        };
+        /**
+         * The onerror property of the SpeechRecognition interface represents an event handler that will run when a speech recognition error occurs
+         * @param {object} e - for show error
+         */
+        recognition.onerror = (e) => {
+            alert(`Error Occured : ${e.error}`)
+        };
+
+    } catch (error) {
+        recording = false;
+        console.log(error);
+    }
+}
+
+/**
+ * for start and stop the sppech that user can choose it
+ */
+function recordSpeech() {
+    if (!recording) {
+        speechToText();
+        recording = true;
+    } else {
+        stopRecording()
+    }
+}
+
+/**
+ * for stop recording and set activity (change text in btn)
+ */
+function stopRecording() {
+    recognition.stop();
+    document.querySelector("#recording>button>span").innerHTML = "Start Listening";
+    recording = false;
 }

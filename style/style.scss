@@ -8,7 +8,7 @@ body {
         height: 100vh;
 
         #Speech-form {
-            width: fit-content;
+            width: 350px;
             border-radius: 6px;
             margin: auto;
             background-color: $bachground;
@@ -25,13 +25,19 @@ body {
 
             .output-text {
                 width: 100%;
-                min-width: 200px;
                 height: 100px;
+                line-break: auto;
+                overflow-y: auto;
             }
 
             button {
                 width: 100%;
                 @include display-f()
+            }
+
+            .intrim {
+                display: inline;
+                margin: 0;
             }
         }
     }
