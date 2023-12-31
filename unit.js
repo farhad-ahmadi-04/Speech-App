@@ -47,3 +47,40 @@ export function resultRecord(event, position, downloadBtn) {
     // something is writen in result lets enable download btn
     downloadBtn.disabled = false
 }
+/**
+ * All the steps to make a downloading file =>
+ * 01. getting text.
+ * 02. create file name.
+ * 03. create (a) element.
+ * 04. set attredurate (href).
+ * 05. set attribute for download.
+ * 06: set display none for link.
+ * 07: push link to body.
+ * 08: Ability to download.
+ * 09: remove link from body
+ * @param {string} resultText - text of user speech that want Dowmload
+ * @param {string} FileN - name of file that programmer choose to download
+ */
+export function downloadTool(resultText, FileN) {
+    // 01.getting text
+    const text = resultText;
+    // 02.create file name
+    const fileName = FileN
+    // 03. create (a) element
+    const link = document.createElement('a');
+    // 04. set attredurate (href)
+    link.setAttribute(
+        'href',
+        "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    // 05. set attribute for download
+    link.setAttribute('download', `${fileName}`);
+    //  06: set display none for link
+    link.style.display = 'none';
+    //07: push link to body
+    document.body.appendChild(link);
+    // 08: Ability to download
+    link.click();
+    // 09: remove link from body
+    document.body.removeChild(link);
+}
