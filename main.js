@@ -15,7 +15,7 @@ const language = document.querySelector("#language-user"),
 
 document.addEventListener("DOMContentLoaded", options)
 record.addEventListener("click", recordSpeech)
-// clear.addEventListener("click", clearText)
+clear.addEventListener("click", clearText)
 download.addEventListener("click", downloadText)
 
 // function...
@@ -120,4 +120,12 @@ function downloadText() {
     // first pass the text then send the file name (file name should be STRING)
     downloadTool(result.innerHTML, "speech.txt")
 
+}
+
+/**
+ * clear the text when user click on btn
+ */
+function clearText() {
+    result.innerHTML = "";
+    download.disabled = true;
 }
