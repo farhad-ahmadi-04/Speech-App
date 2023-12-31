@@ -1,6 +1,4 @@
 # Speech-App
-
-)
 ## Des:
   - You can also download the text conversion project.
   - This is a prototype and will be developed in the future.
