@@ -10,6 +10,9 @@ body .container #Speech-form {
   margin: auto;
   background-color: #fffdfd;
 }
+body .container #Speech-form h1 {
+  text-align: center;
+}
 body .container #Speech-form .separator {
   display: block;
   height: 0;
