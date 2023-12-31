@@ -104,6 +104,166 @@
     
 
     
+    <h4 class="name" id="downloadTool"><span class="type-signature"></span>downloadTool<span class="signature">(resultText, FileN)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    All the steps to make a downloading file =>01. getting text.02. create file name.03. create (a) element.04. set attredurate (href).05. set attribute for download.06: set display none for link.07: push link to body.08: Ability to download.09: remove link from body
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>resultText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">text of user speech that want Dowmload</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>FileN</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of file that programmer choose to download</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="unit.js.html">unit.js</a>, <a href="unit.js.html#line64">line 64</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="languagesTemplate"><span class="type-signature"></span>languagesTemplate<span class="signature">(code, name, position)</span><span class="type-signature"></span></h4>
     
 
@@ -386,6 +546,189 @@
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="resultRecord"><span class="type-signature"></span>resultRecord<span class="signature">(event, position, downloadBtn)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    finde user speech then analysis and after that, show it in target position
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">using object for search in respons of web speech API</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">place of showing texts</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>downloadBtn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">btn of downloading text => user shoud accece to download text when has text in fild</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="unit.js.html">unit.js</a>, <a href="unit.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -401,13 +744,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#languagesTemplate">languagesTemplate</a></li><li><a href="global.html#readData">readData</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#downloadTool">downloadTool</a></li><li><a href="global.html#languagesTemplate">languagesTemplate</a></li><li><a href="global.html#readData">readData</a></li><li><a href="global.html#resultRecord">resultRecord</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sat Dec 30 2023 16:52:43 GMT+0330 (Iran Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Dec 31 2023 23:03:43 GMT+0330 (Iran Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
