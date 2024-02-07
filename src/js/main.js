@@ -91,7 +91,6 @@ function speechToText() {
         console.log(error);
     }
 }
-
 /**
  * for start and stop the sppech that user can choose it
  */
